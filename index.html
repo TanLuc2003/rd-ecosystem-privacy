@@ -1,178 +1,485 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chính Sách Bảo Mật - RD EcoSystem</title>
+  <title>Chính Sách Bảo Mật – RD EcoSystem</title>
+  <meta name="description" content="Chính sách bảo mật của ứng dụng RD EcoSystem – Công ty Cổ Phần Rạng Đông.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.7;
-      color: #1a1a2e;
-      background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
-      min-height: 100vh;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1d1d1f;
+      background-color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    .container {
-      max-width: 800px;
+
+    /* ── Header ── */
+    .site-header {
+      border-bottom: 1px solid #e5e5e7;
+    }
+
+    .site-header .inner {
+      max-width: 980px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 32px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1d1d1f;
+      text-decoration: none;
+      letter-spacing: -0.3px;
     }
-    .header h1 {
+
+    .logo span {
+      color: #0071e3;
+    }
+
+    .header-meta {
+      font-size: 13px;
+      color: #86868b;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 64px 24px 48px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      color: #1d1d1f;
+    }
+
+    .hero .subtitle {
+      margin-top: 16px;
+      font-size: 17px;
+      color: #86868b;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+
+    .divider {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .divider hr {
+      border: none;
+      border-top: 1px solid #e5e5e7;
+    }
+
+    /* ── Content ── */
+    .content {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 64px;
+    }
+
+    /* ── Sidebar / TOC ── */
+    .toc {
+      position: sticky;
+      top: 32px;
+      align-self: start;
+    }
+
+    .toc-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #86868b;
+      margin-bottom: 16px;
+    }
+
+    .toc ul {
+      list-style: none;
+    }
+
+    .toc li {
+      margin-bottom: 0;
+    }
+
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #1d1d1f;
+      text-decoration: none;
+      border-left: 2px solid transparent;
+      padding-left: 16px;
+      transition: all 0.15s ease;
+    }
+
+    .toc a:hover {
+      color: #0071e3;
+      border-left-color: #0071e3;
+    }
+
+    /* ── Sections ── */
+    .sections {
+      min-width: 0;
+    }
+
+    .policy-section {
+      margin-bottom: 48px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
       font-size: 28px;
-      color: #0C254B;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #1d1d1f;
+      margin-bottom: 16px;
+      padding-top: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .policy-section p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #424245;
+      margin-bottom: 12px;
+    }
+
+    .policy-section ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .policy-section li {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #424245;
       margin-bottom: 8px;
     }
-    .header .app-name {
-      font-size: 16px;
-      color: #2E88F8;
+
+    .policy-section strong {
       font-weight: 600;
+      color: #1d1d1f;
     }
-    .header .updated {
-      font-size: 13px;
-      color: #888;
-      margin-top: 8px;
+
+    /* ── Highlight animation on TOC click ── */
+    @keyframes sectionHighlight {
+      0% {
+        background-color: rgba(0, 113, 227, 0.2);
+      }
+
+      100% {
+        background-color: transparent;
+      }
     }
-    .section {
-      background: white;
+
+    .policy-section h2.highlight {
+      animation: sectionHighlight 1.5s ease-out;
+    }
+
+    /* ── Contact Card ── */
+    .contact-card {
+      margin-top: 24px;
+      padding: 24px;
+      background: #f5f5f7;
       border-radius: 12px;
-      padding: 28px;
-      margin-bottom: 20px;
-      box-shadow: 0 1px 8px rgba(0,0,0,0.04);
     }
-    .section h2 {
-      font-size: 20px;
-      color: #0C254B;
-      margin-bottom: 14px;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #e8eeff;
-    }
-    .section p, .section li {
+
+    .contact-card p {
       font-size: 15px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .section ul {
-      padding-left: 24px;
-    }
-    .section ul li {
+      color: #424245;
       margin-bottom: 6px;
     }
-    .contact-info {
-      background: #f0f6ff;
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin-top: 12px;
+
+    .contact-card p:last-child {
+      margin-bottom: 0;
     }
-    .contact-info p {
-      margin-bottom: 4px;
-      font-size: 14px;
+
+    .contact-card a {
+      color: #0071e3;
+      text-decoration: none;
     }
-    .footer {
-      text-align: center;
-      padding: 24px;
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid #e5e5e7;
+    }
+
+    .site-footer .inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-size: 13px;
-      color: #999;
+      color: #86868b;
+    }
+
+    .site-footer a {
+      color: #0071e3;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 40px 20px 32px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+        letter-spacing: -0.8px;
+      }
+
+      .hero .subtitle {
+        font-size: 15px;
+      }
+
+      .divider {
+        padding: 0 20px;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 32px 20px 60px;
+      }
+
+      .toc {
+        position: static;
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #e5e5e7;
+      }
+
+      .toc a {
+        padding: 6px 0;
+        padding-left: 12px;
+        font-size: 13px;
+      }
+
+      .policy-section h2 {
+        font-size: 22px;
+      }
+
+      .policy-section p,
+      .policy-section li {
+        font-size: 15px;
+      }
+
+      .site-header .inner,
+      .site-footer .inner {
+        padding: 14px 20px;
+      }
+
+      .site-footer .inner {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="app-name">RD EcoSystem</div>
-      <h1>Chính Sách Bảo Mật</h1>
-      <p class="updated">Cập nhật lần cuối: 18/06/2026</p>
-    </div>
 
-    <div class="section">
-      <h2>1. Giới thiệu</h2>
-      <p>Công ty CP Bóng đèn Phích nước Rạng Đông ("chúng tôi") cam kết bảo vệ quyền riêng tư của người dùng ứng dụng RD EcoSystem ("Ứng dụng"). Chính sách bảo mật này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin cá nhân của bạn.</p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="inner">
+      <a href="#" class="logo">RD <span>EcoSystem</span></a>
+      <span class="header-meta">Chính sách bảo mật</span>
     </div>
+  </header>
 
-    <div class="section">
-      <h2>2. Thông tin chúng tôi thu thập</h2>
-      <p>Khi bạn sử dụng Ứng dụng, chúng tôi có thể thu thập các loại thông tin sau:</p>
-      <ul>
-        <li><strong>Thông tin tài khoản:</strong> Tên đăng nhập, mã nhân viên, thông tin liên hệ (họ tên, email, số điện thoại).</li>
-        <li><strong>Thông tin nhân sự:</strong> Thông tin hợp đồng lao động, lương, phụ cấp, chấm công, nghỉ phép – được cung cấp bởi hệ thống quản lý doanh nghiệp.</li>
-        <li><strong>Dữ liệu sử dụng:</strong> Thông tin về cách bạn tương tác với Ứng dụng để cải thiện trải nghiệm người dùng.</li>
-        <li><strong>Thông tin thiết bị:</strong> Mã định danh thiết bị (device token) để gửi thông báo đẩy (push notification).</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>3. Mục đích sử dụng thông tin</h2>
-      <p>Chúng tôi sử dụng thông tin thu thập được cho các mục đích sau:</p>
-      <ul>
-        <li>Xác thực và quản lý tài khoản người dùng.</li>
-        <li>Cung cấp các chức năng quản lý nhân sự, chấm công, nghỉ phép và các nghiệp vụ doanh nghiệp.</li>
-        <li>Gửi thông báo liên quan đến công việc và phê duyệt.</li>
-        <li>Cải thiện hiệu suất và trải nghiệm người dùng.</li>
-        <li>Đảm bảo an toàn và bảo mật hệ thống.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>4. Chia sẻ thông tin</h2>
-      <p>Chúng tôi <strong>không bán, trao đổi hoặc chia sẻ</strong> thông tin cá nhân của bạn cho bên thứ ba vì mục đích thương mại. Thông tin chỉ được chia sẻ trong các trường hợp:</p>
-      <ul>
-        <li>Trong nội bộ hệ thống quản lý của Công ty Rạng Đông và các đơn vị thành viên.</li>
-        <li>Khi có yêu cầu từ cơ quan nhà nước có thẩm quyền theo quy định pháp luật.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>5. Bảo mật dữ liệu</h2>
-      <p>Chúng tôi áp dụng các biện pháp bảo mật kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn, bao gồm:</p>
-      <ul>
-        <li>Mã hóa dữ liệu truyền tải (SSL/TLS).</li>
-        <li>Xác thực bảo mật nhiều lớp (OTP, sinh trắc học).</li>
-        <li>Kiểm soát quyền truy cập theo phân quyền.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>6. Quyền của người dùng</h2>
-      <p>Bạn có quyền:</p>
-      <ul>
-        <li>Truy cập và xem thông tin cá nhân của mình trong Ứng dụng.</li>
-        <li>Yêu cầu chỉnh sửa thông tin không chính xác thông qua bộ phận nhân sự.</li>
-        <li>Yêu cầu xóa tài khoản và dữ liệu liên quan.</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>7. Lưu trữ dữ liệu</h2>
-      <p>Dữ liệu cá nhân được lưu trữ trên hệ thống máy chủ bảo mật và chỉ được giữ lại trong thời gian cần thiết cho các mục đích đã nêu hoặc theo yêu cầu pháp lý.</p>
-    </div>
-
-    <div class="section">
-      <h2>8. Thay đổi chính sách</h2>
-      <p>Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian. Mọi thay đổi sẽ được thông báo qua Ứng dụng hoặc trang web này. Việc tiếp tục sử dụng Ứng dụng sau khi thay đổi đồng nghĩa với việc bạn chấp nhận các điều khoản mới.</p>
-    </div>
-
-    <div class="section">
-      <h2>9. Liên hệ</h2>
-      <p>Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ:</p>
-      <div class="contact-info">
-        <p><strong>Công ty CP Bóng đèn Phích nước Rạng Đông</strong></p>
-        <p>📍 87-89 Hạ Đình, Thanh Xuân, Hà Nội, Việt Nam</p>
-        <p>📧 Email: support@rangdong.com.vn</p>
-        <p>🌐 Website: https://rangdong.com.vn</p>
-      </div>
-    </div>
-
-    <div class="footer">
-      <p>© 2026 Công ty CP Bóng đèn Phích nước Rạng Đông. All rights reserved.</p>
-    </div>
+  <!-- Hero -->
+  <div class="hero">
+    <h1>Chính Sách Bảo Mật</h1>
+    <p class="subtitle">Cập nhật lần cuối: 18 tháng 6, 2026. Chúng tôi cam kết bảo vệ quyền riêng tư và thông tin cá
+      nhân của bạn.</p>
   </div>
+
+  <div class="divider">
+    <hr>
+  </div>
+
+  <!-- Content -->
+  <main class="content">
+    <!-- Table of Contents -->
+    <nav class="toc" aria-label="Mục lục">
+      <p class="toc-title">Mục lục</p>
+      <ul>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#thu-thap">Thông tin thu thập</a></li>
+        <li><a href="#muc-dich">Mục đích sử dụng</a></li>
+        <li><a href="#chia-se">Chia sẻ thông tin</a></li>
+        <li><a href="#bao-mat">Bảo mật dữ liệu</a></li>
+        <li><a href="#quyen">Quyền của bạn</a></li>
+        <li><a href="#luu-tru">Lưu trữ dữ liệu</a></li>
+        <li><a href="#thay-doi">Thay đổi chính sách</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sections -->
+    <div class="sections">
+
+      <section id="gioi-thieu" class="policy-section">
+        <h2>Giới thiệu</h2>
+        <p>Công ty Cổ Phần Rạng Đông cam kết bảo vệ quyền riêng tư của người dùng ứng dụng
+          RD EcoSystem. Chính sách bảo mật này mô tả cách chúng tôi thu thập, sử dụng và bảo vệ thông tin
+          cá nhân của bạn.</p>
+      </section>
+
+      <section id="thu-thap" class="policy-section">
+        <h2>Thông tin chúng tôi thu thập</h2>
+        <p>Khi bạn sử dụng Ứng dụng, chúng tôi có thể thu thập các loại thông tin sau:</p>
+        <ul>
+          <li><strong>Thông tin tài khoản:</strong> Tên đăng nhập, mã nhân viên, thông tin liên hệ (họ tên, email, số
+            điện thoại).</li>
+          <li><strong>Thông tin nhân sự:</strong> Thông tin hợp đồng lao động, lương, phụ cấp, chấm công, nghỉ phép –
+            được cung cấp bởi hệ thống quản lý doanh nghiệp.</li>
+          <li><strong>Dữ liệu sử dụng:</strong> Thông tin về cách bạn tương tác với Ứng dụng để cải thiện trải nghiệm
+            người dùng.</li>
+        </ul>
+      </section>
+
+      <section id="muc-dich" class="policy-section">
+        <h2>Mục đích sử dụng thông tin</h2>
+        <p>Chúng tôi sử dụng thông tin thu thập được cho các mục đích sau:</p>
+        <ul>
+          <li>Xác thực và quản lý tài khoản người dùng.</li>
+          <li>Cung cấp các chức năng quản lý nhân sự, chấm công, nghỉ phép và các nghiệp vụ doanh nghiệp.</li>
+          <li>Gửi thông báo liên quan đến công việc và phê duyệt.</li>
+          <li>Cải thiện hiệu suất và trải nghiệm người dùng.</li>
+          <li>Đảm bảo an toàn và bảo mật hệ thống.</li>
+        </ul>
+      </section>
+
+      <section id="chia-se" class="policy-section">
+        <h2>Chia sẻ thông tin</h2>
+        <p>Chúng tôi <strong>không bán, trao đổi hoặc chia sẻ</strong> thông tin cá nhân của bạn cho bên thứ ba vì mục
+          đích thương mại. Thông tin chỉ được chia sẻ trong các trường hợp:</p>
+        <ul>
+          <li>Trong nội bộ hệ thống quản lý của Công ty Cổ Phần Rạng Đông và các đơn vị thành viên.</li>
+          <li>Khi có yêu cầu từ cơ quan nhà nước có thẩm quyền theo quy định pháp luật.</li>
+        </ul>
+      </section>
+
+      <section id="bao-mat" class="policy-section">
+        <h2>Bảo mật dữ liệu</h2>
+        <p>Chúng tôi áp dụng các biện pháp bảo mật kỹ thuật và tổ chức phù hợp để bảo vệ thông tin cá nhân của bạn, bao
+          gồm:</p>
+        <ul>
+          <li>Mã hóa dữ liệu truyền tải (SSL/TLS).</li>
+          <li>Xác thực bảo mật nhiều lớp (OTP, sinh trắc học).</li>
+          <li>Kiểm soát quyền truy cập theo phân quyền.</li>
+        </ul>
+      </section>
+
+      <section id="quyen" class="policy-section">
+        <h2>Quyền của bạn</h2>
+        <p>Bạn có quyền:</p>
+        <ul>
+          <li>Truy cập và xem thông tin cá nhân của mình trong Ứng dụng.</li>
+          <li>Yêu cầu chỉnh sửa thông tin không chính xác thông qua bộ phận nhân sự.</li>
+          <li>Yêu cầu xóa tài khoản và dữ liệu liên quan.</li>
+        </ul>
+      </section>
+
+      <section id="luu-tru" class="policy-section">
+        <h2>Lưu trữ dữ liệu</h2>
+        <p>Dữ liệu cá nhân được lưu trữ trên hệ thống máy chủ bảo mật và chỉ được giữ lại trong thời gian cần thiết cho
+          các mục đích đã nêu hoặc theo yêu cầu pháp lý.</p>
+      </section>
+
+      <section id="thay-doi" class="policy-section">
+        <h2>Thay đổi chính sách</h2>
+        <p>Chúng tôi có thể cập nhật Chính sách Bảo mật này theo thời gian. Mọi thay đổi sẽ được thông báo qua Ứng dụng
+          hoặc trang web này. Việc tiếp tục sử dụng Ứng dụng sau khi thay đổi đồng nghĩa với việc bạn chấp nhận các điều
+          khoản mới.</p>
+      </section>
+
+      <section id="lien-he" class="policy-section">
+        <h2>Liên hệ</h2>
+        <p>Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, vui lòng liên hệ:</p>
+        <div class="contact-card">
+          <p><strong>Công ty Cổ Phần Rạng Đông</strong></p>
+          <p>J45 Tôn Đức Thắng, Đông Xuân An, Hàm Thắng, Lâm Đồng, Việt Nam</p>
+          <p>Email: <a href="mailto:cntt@rangdong.com.vn">cntt@rangdonggroup.com</a></p>
+          <p>Website: <a href="https://rangdonggroup.com.vn" target="_blank" rel="noopener">rangdonggroup.com.vn</a></p>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© 2026 Công ty Cổ Phần Rạng Đông.</span>
+      <a href="https://rangdonggroup.com.vn" target="_blank" rel="noopener">rangdonggroup.com.vn</a>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.toc a').forEach(link => {
+      link.addEventListener('click', e => {
+        const id = link.getAttribute('href').substring(1);
+        const section = document.getElementById(id);
+        if (section) {
+          const h2 = section.querySelector('h2');
+          if (h2) {
+            h2.classList.remove('highlight');
+            void h2.offsetWidth; // force reflow to restart animation
+            h2.classList.add('highlight');
+            h2.addEventListener('animationend', () => {
+              h2.classList.remove('highlight');
+            }, { once: true });
+          }
+        }
+      });
+    });
+  </script>
+
 </body>
+
 </html>
